@@ -10,7 +10,7 @@ const DEFAULT_MESSAGE: &str = "I am Waddles";
   name = "ducksay",
   version,
   about = "Make Waddles say things",
-  long_about = "Make Waddles say things.\n\nPass a message as arguments. Without a message, Waddles introduces himself."
+  long_about = "Make Waddles say things.\n\nPass a message as arguments. Without a message, Waddles introduces himself. Output is monospace by default."
 )]
 struct Cli {
   #[arg(
@@ -21,11 +21,8 @@ struct Cli {
   )]
   width: NonZeroUsize,
 
-  #[arg(
-    long,
-    help = "Use plain monospace output without the Twitter workaround"
-  )]
-  mono: bool,
+  #[arg(long, help = "Use Twitter-compatible output")]
+  twitter: bool,
 
   #[arg(
     value_name = "MESSAGE",
@@ -45,10 +42,10 @@ fn main() {
     &message
   };
 
-  let style = if cli.mono {
-    Style::Mono
-  } else {
+  let style = if cli.twitter {
     Style::Twitter
+  } else {
+    Style::Mono
   };
 
   print!("{}", render_with_style(&message, cli.width.get(), style));

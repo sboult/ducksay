@@ -39,7 +39,7 @@ const MONO_LAYOUT: DuckLayout = DuckLayout {
 const FOOTER: &str = " ~~~~~~~~~~~~~~~~~~-->\n";
 
 pub fn render(message: &str, width: usize) -> String {
-  render_with_style(message, width, Style::Twitter)
+  render_with_style(message, width, Style::Mono)
 }
 
 pub fn render_with_style(message: &str, width: usize, style: Style) -> String {

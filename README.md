@@ -22,10 +22,10 @@ Pass a message:
 cargo run -- hello from Waddles
 ```
 
-Use monospace duck output:
+Use Twitter-compatible output:
 
 ```sh
-cargo run -- --mono hello
+cargo run -- --twitter hello
 ```
 
 Adjust wrapping:
