@@ -2,6 +2,13 @@
 
 Make Waddles say things from your terminal.
 
+```
+<!--       _
+       .__(.)< (I am Waddles)
+        \___)
+ ~~~~~~~~~~~~~~~~~~-->
+```
+
 ## Install
 
 ```sh
